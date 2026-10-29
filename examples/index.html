@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Evidence UI example report</title>
+  <link rel="stylesheet" href="../tokens/tokens.css">
+  <link rel="stylesheet" href="../dist/evidence-ui.css">
+  <style>body { margin: 0; background: var(--ev-surface-primary); }</style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"></script>
+  <script src="../dist/evidence-ui.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    // Example data only. Northwind Logistics is a fictional customer.
+    var E = window.EvidenceUI, h = React.createElement;
+
+    function Savings() {
+      var a = React.useState(40000), usage = a[0], setUsage = a[1];
+      var b = React.useState(18), pct = b[0], setPct = b[1];
+      var bad = pct < 10 || pct > 25;
+      var monthly = usage * pct / 100;
+      var money = function (n) { return '$' + Math.round(n).toLocaleString('en-US'); };
+      return h(E.Calculator, {
+        inputs: [
+          h(E.Field, { key: 'u', id: 'usage', label: 'Monthly usage', type: 'number', prefix: '$', value: usage, onChange: function (e) { setUsage(+e.target.value || 0); } }),
+          h(E.Field, { key: 'p', id: 'pct', label: 'Annual discount', type: 'number', suffix: '%', value: pct,
+            hint: bad ? null : 'Between 10% and 25%.', error: bad ? 'Choose a discount between 10% and 25%.' : null,
+            onChange: function (e) { setPct(+e.target.value || 0); } })
+        ],
+        results: [
+          { label: 'Saved per month', value: money(monthly), lead: true },
+          { label: 'Saved per year', value: money(monthly * 12), detail: 'Over a 12-month term' }
+        ],
+        formula: 'saved = usage × discount'
+      });
+    }
+
+    function Report() {
+      return h(E.ReportShell, { meta: ['For Northwind Logistics', 'Q3 2026'], footer: 'Example report. All figures are illustrative.' },
+        h(E.Opening, {
+          claim: 'Checkout pages now load in under a second',
+          lede: 'Across 3,912 sessions sampled in September, the median checkout page loaded in 0.84 s, down from 2.1 s in June.',
+          context: 'Real-user monitoring, desktop and mobile, July 1 to September 30, 2026.',
+          proof: h(E.BarList, { label: 'Median load time by page', rows: [
+            { label: 'Checkout', value: 0.84, display: '0.84 s', lead: true },
+            { label: 'Cart', value: 1.12, display: '1.12 s' },
+            { label: 'Search', value: 1.47, display: '1.47 s' },
+            { label: 'June baseline', value: 2.1, display: '2.10 s', reference: true }
+          ], caption: 'Median load time in seconds, September. Shorter is faster.' })
+        }),
+        h('section', { style: { display: 'grid', gap: 'var(--ev-space-6)' } },
+          h('h2', { className: 'ev-t-h24' }, 'The drop happened in August and held'),
+          h(E.Chart, {
+            unit: ' s', yMax: 3, yTicks: [0, 1, 2, 3],
+            xLabels: ['Jul 1', 'Jul 15', 'Aug 1', 'Aug 15', 'Sep 1', 'Sep 15', 'Sep 30'],
+            series: [{ name: 'Checkout', values: [2.1, 1.9, 1.3, 1.0, 0.9, 0.85, 0.84] }, { name: 'Target', values: [1, 1, 1, 1, 1, 1, 1] }],
+            ariaLabel: 'Median checkout load time per week, falling from 2.1 seconds to 0.84 seconds',
+            caption: 'Load time fell below the 1 s target in mid-August. The chart does not show what caused the drop.'
+          }),
+          h(E.StatStrip, { stats: [
+            { label: 'Sessions sampled', value: '3,912', detail: 'September 1 to 30' },
+            { label: 'Failed payments', value: '0.4%', detail: 'Of 18,240 attempts' },
+            { label: 'Weeks below target', value: '7', detail: 'Of 13 in the quarter' }
+          ] }),
+          h(E.Note, { title: 'How this was measured' }, 'Load times come from real-user monitoring. Bot traffic is excluded, and weeks with fewer than 200 sessions are left out.')
+        ),
+        h('section', { style: { display: 'grid', gap: 'var(--ev-space-6)' } },
+          h('h2', { className: 'ev-t-h24' }, 'Exact figures by page'),
+          h(E.DataTable, {
+            caption: 'Sessions and exit rate by page, September 2026',
+            columns: [{ key: 'page', label: 'Page' }, { key: 'sessions', label: 'Sessions', numeric: true }, { key: 'load', label: 'Median load', numeric: true }, { key: 'exit', label: 'Exit rate', numeric: true }],
+            rows: [
+              { page: 'Checkout', sessions: 1840, load: '0.84 s', exit: '12%' },
+              { page: 'Cart', sessions: 1204, load: '1.12 s', exit: '19%' },
+              { page: 'Search', sessions: 868, load: '1.47 s', exit: '31%' }
+            ],
+            foot: { page: 'All pages', sessions: 3912, load: '1.02 s', exit: '18%' }
+          })
+        ),
+        h('section', { style: { display: 'grid', gap: 'var(--ev-space-6)' } },
+          h('h2', { className: 'ev-t-h24' }, 'What an annual plan would save'),
+          h(E.Comparison, { items: [
+            { title: 'Keep monthly billing', body: 'No commitment. The bill follows usage, about $40,000 a month today.' },
+            { title: 'Switch to annual', body: 'Commit for 12 months at a discount. Usage above the commitment is billed at the same rate.' }
+          ] }),
+          h(Savings)
+        ),
+        h(E.Band, { inverse: true },
+          h('h2', { className: 'ev-t-h24' }, 'Choose a billing plan by November 14'),
+          h('p', null, 'The current discount ends on that date.'),
+          h('div', { className: 'ev-demo-row' }, h(E.Button, { solid: true }, 'Compare plans'), h(E.Button, null, 'See invoice data'))
+        ),
+        h('section', { style: { display: 'grid', gap: 'var(--ev-space-4)' } },
+          h('h2', { className: 'ev-t-h16' }, 'Sources'),
+          h(E.Sources, { items: [
+            { label: 'Real-user monitoring export', detail: 'July 1 to September 30, 2026' },
+            { label: 'Invoices for July, August and September 2026' }
+          ] })
+        )
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(h(Report));
+  </script>
+</body>
+</html>

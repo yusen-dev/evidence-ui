@@ -1,0 +1,176 @@
+/* Evidence UI component styles. Colors, spacing and type all come from tokens (--ev-*). */
+
+/* Root scope ----------------------------------------------------------- */
+.ev {
+  --ev-ink: var(--ev-text-primary);
+  --ev-ink-muted: var(--ev-text-secondary);
+  --ev-rule: var(--ev-border-subtle);
+  --ev-edge: var(--ev-border-default);
+  --ev-edge-hover: var(--ev-border-strong);
+  box-sizing: border-box;
+  color: var(--ev-ink);
+  background: var(--ev-surface-primary);
+  font: var(--ev-weight-regular) 16px/24px var(--font-sans);
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+}
+.ev *, .ev *::before, .ev *::after { box-sizing: inherit; }
+.ev :is(h1, h2, h3, h4, p, ul, ol, figure) { margin: 0; }
+.ev :is(h1, h2, h3, h4) { font-weight: var(--ev-weight-heading); color: var(--ev-ink); text-wrap: balance; }
+.ev p { text-wrap: pretty; }
+.ev :focus-visible { outline: 2px solid var(--ev-focus); outline-offset: 2px; }
+.ev-sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.ev-sr-only:focus { position: static; width: auto; height: auto; clip-path: none; }
+
+/* Type roles ----------------------------------------------------------- */
+.ev-t-display { font-size: 48px; line-height: 56px; letter-spacing: -0.06em; max-width: 20ch; }
+.ev-t-title { font-size: 40px; line-height: 48px; letter-spacing: -0.06em; max-width: 24ch; }
+.ev-t-h24 { font-size: 24px; line-height: 32px; letter-spacing: -0.04em; }
+.ev-t-h20 { font-size: 20px; line-height: 26px; letter-spacing: -0.02em; }
+.ev-t-h16 { font-size: 16px; line-height: 24px; letter-spacing: -0.02em; }
+.ev-t-lede { font-size: 18px; line-height: 28px; color: var(--ev-gray-900); max-width: 68ch; }
+.ev-t-small { font-size: 14px; line-height: 20px; color: var(--ev-ink-muted); }
+.ev-t-meta { font-size: 13px; line-height: 18px; color: var(--ev-ink-muted); font-variant-numeric: tabular-nums; }
+.ev-t-code { font-family: var(--font-mono); font-variant-numeric: tabular-nums slashed-zero; }
+.ev-num { font-variant-numeric: tabular-nums; }
+
+/* Shell ------------------------------------------------------------------ */
+.ev-shell { display: grid; gap: var(--ev-space-12); width: min(100% - 48px, 1200px); margin-inline: auto; padding-block: clamp(40px, 7vw, 80px); }
+.ev-shell__main { display: grid; gap: var(--ev-space-12); }
+.ev-masthead { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--ev-space-3) var(--ev-space-6); }
+.ev-masthead__meta { display: flex; flex-wrap: wrap; gap: var(--ev-space-1) var(--ev-space-6); }
+.ev-footer { display: flex; align-items: center; justify-content: space-between; gap: var(--ev-space-6); padding-top: var(--ev-space-16); }
+.ev-slot { display: inline-grid; place-items: center; border: 1px dashed var(--ev-edge-hover); border-radius: var(--ev-radius-small); color: var(--ev-ink-muted); font-size: 11px; line-height: 1; }
+.ev-slot--wordmark { width: 88px; height: 20px; }
+.ev-slot--mark { width: 20px; height: 18px; }
+
+/* Opening ---------------------------------------------------------------- */
+.ev-opening { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--ev-space-8) var(--ev-space-6); align-items: start; }
+.ev-opening__claim { grid-column: span 7; display: grid; gap: var(--ev-space-4); min-width: 0; }
+.ev-opening__proof { grid-column: span 5; min-width: 0; }
+
+/* Stats ------------------------------------------------------------------ */
+.ev-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: var(--ev-space-8); }
+.ev-stats__item { display: grid; gap: var(--ev-space-2); align-content: start; min-width: 0; }
+.ev-value { font-size: 24px; line-height: 32px; font-weight: var(--ev-weight-heading); letter-spacing: -0.04em; font-variant-numeric: tabular-nums; }
+.ev-value--lead { font-size: clamp(32px, 4vw, 40px); line-height: 1.15; }
+
+/* Bars ------------------------------------------------------------------- */
+.ev-bars { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: minmax(8ch, max-content) minmax(0, 1fr) max-content; gap: var(--ev-space-3) var(--ev-space-4); align-items: center; font-size: 14px; line-height: 20px; }
+.ev-bars__row { display: grid; grid-template-columns: subgrid; grid-column: 1 / -1; align-items: center; }
+.ev-bars__value { text-align: right; font-variant-numeric: tabular-nums; }
+.ev-bars__track { height: 8px; border-radius: 2px; background: var(--ev-surface-secondary); overflow: hidden; }
+.ev-bars__fill { height: 100%; background: var(--ev-bar-color, var(--ev-ink)); }
+.ev-bars--focused .ev-bars__row:not(.is-lead) { --ev-bar-color: var(--ev-ink-muted); }
+.ev-bars__row.is-reference { --ev-bar-color: var(--ev-ink-muted); }
+
+/* Table ------------------------------------------------------------------ */
+.ev-table { overflow-x: auto; min-width: 0; }
+.ev-table table { width: 100%; border-collapse: collapse; font-size: 14px; line-height: 20px; }
+.ev-table caption { caption-side: top; text-align: left; padding-bottom: var(--ev-space-3); color: var(--ev-ink-muted); }
+.ev-table :is(th, td) { padding: var(--ev-space-3) var(--ev-space-4) var(--ev-space-3) 0; text-align: left; vertical-align: baseline; border-bottom: 1px solid var(--ev-rule); }
+.ev-table :is(th, td):last-child { padding-right: 0; }
+.ev-table thead th { vertical-align: bottom; font-weight: var(--ev-weight-regular); color: var(--ev-ink-muted); border-bottom-color: var(--ev-edge-hover); }
+.ev-table tbody th { font-weight: var(--ev-weight-regular); white-space: nowrap; }
+.ev-table tfoot :is(th, td) { font-weight: var(--ev-weight-medium); border-bottom: 0; }
+.ev-table .ev-num { text-align: right; }
+.ev-table tr.is-highlighted > * { background: var(--ev-gray-alpha-100); }
+
+/* Chart ------------------------------------------------------------------ */
+.ev-chart { display: grid; gap: var(--ev-space-3); min-width: 0; }
+.ev-chart__plot { overflow-x: auto; }
+.ev-chart__plot svg { display: block; width: 100%; min-width: 480px; height: auto; overflow: visible; }
+.ev-chart__axis { stroke: var(--ev-edge-hover); }
+.ev-chart__grid { stroke: var(--ev-rule); }
+.ev-chart__line { fill: none; stroke: var(--ev-series); stroke-width: 2; }
+.ev-chart__dot { fill: var(--ev-series); }
+.ev-chart__label { fill: var(--ev-ink); font-size: 13px; }
+.ev-chart__tick { fill: var(--ev-ink-muted); font-size: 12px; }
+.ev-series-1 { --ev-series: var(--ev-chart-1); }
+.ev-series-2 { --ev-series: var(--ev-chart-2); }
+.ev-series-3 { --ev-series: var(--ev-chart-3); }
+.ev-series-2.ev-chart__line { stroke-dasharray: 6 4; }
+.ev-series-3.ev-chart__line { stroke-dasharray: 2 3; }
+
+/* Comparison ------------------------------------------------------------- */
+.ev-compare { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: var(--ev-space-8); }
+.ev-compare__item { display: grid; gap: var(--ev-space-3); align-content: start; min-width: 0; }
+.ev-compare__item p { color: var(--ev-ink-muted); }
+
+/* Band ------------------------------------------------------------------- */
+.ev-band { display: grid; gap: var(--ev-space-4); }
+.ev-band--inverse {
+  --ev-ink: var(--ev-text-on-contrast);
+  --ev-ink-muted: var(--ev-text-on-contrast-secondary);
+  --ev-rule: var(--ev-border-on-contrast);
+  --ev-edge: var(--ev-border-on-contrast);
+  --ev-edge-hover: var(--ev-text-on-contrast);
+  color: var(--ev-ink);
+  background: var(--ev-surface-contrast);
+  border-radius: var(--ev-radius);
+  padding: clamp(32px, 5vw, 56px) clamp(24px, 4vw, 48px);
+}
+
+/* Button: each variant only sets three local properties ------------------ */
+.ev-btn {
+  --btn-bg: var(--ev-surface-primary);
+  --btn-fg: var(--ev-gray-1000);
+  --btn-edge: var(--ev-edge);
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--ev-space-2);
+  min-height: 36px; max-width: 100%; padding: 0 var(--ev-space-4);
+  color: var(--btn-fg); background: var(--btn-bg); border: 1px solid var(--btn-edge); border-radius: var(--ev-radius-small);
+  font: var(--ev-weight-medium) 14px/20px var(--font-sans); text-decoration: none; cursor: pointer;
+}
+.ev-btn:hover { --btn-bg: var(--ev-gray-alpha-200); }
+.ev-btn--solid { --btn-bg: var(--ev-gray-1000); --btn-fg: var(--ev-surface-primary); --btn-edge: var(--ev-gray-1000); }
+.ev-btn--solid:hover { --btn-bg: var(--ev-gray-900); --btn-edge: var(--ev-gray-900); }
+.ev-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.ev-band--inverse .ev-btn { --btn-bg: transparent; --btn-fg: var(--ev-ink); }
+.ev-band--inverse .ev-btn--solid { --btn-bg: var(--ev-ink); --btn-fg: var(--ev-surface-contrast); --btn-edge: var(--ev-ink); }
+@media (prefers-reduced-motion: no-preference) { .ev-btn { transition: background-color 120ms, border-color 120ms; } }
+
+/* Field ------------------------------------------------------------------ */
+.ev-field { display: grid; gap: var(--ev-space-2); min-width: 0; }
+.ev-field__label { font-size: 13px; line-height: 16px; color: var(--ev-ink-muted); }
+.ev-field__box { display: flex; align-items: stretch; min-height: 36px; border: 1px solid var(--ev-edge); border-radius: var(--ev-radius-small); background: var(--ev-surface-primary); overflow: hidden; }
+.ev-field__box:hover { border-color: var(--ev-edge-hover); }
+.ev-field__box:focus-within { outline: 2px solid var(--ev-focus); outline-offset: 2px; }
+.ev-field__box input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; color: var(--ev-gray-1000); font: 14px/1.4 var(--font-sans); padding: 0 var(--ev-space-3); font-variant-numeric: tabular-nums; }
+.ev-field__unit { display: flex; align-items: center; padding: 0 var(--ev-space-3); color: var(--ev-ink-muted); background: var(--ev-surface-secondary); font-size: 14px; }
+.ev-field__unit:first-child { border-right: 1px solid var(--ev-edge); }
+.ev-field__unit:last-child { border-left: 1px solid var(--ev-edge); }
+.ev-field__hint, .ev-field__error { font-size: 13px; line-height: 18px; }
+.ev-field__hint { color: var(--ev-ink-muted); }
+.ev-field__error { color: var(--ev-color-error); font-weight: var(--ev-weight-medium); }
+.ev-field.is-invalid .ev-field__box { border-color: var(--ev-color-error); }
+
+/* Calculator ------------------------------------------------------------- */
+.ev-calc { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--ev-space-8); align-items: start; }
+.ev-calc__inputs { display: grid; gap: var(--ev-space-5); min-width: 0; }
+.ev-calc__results { display: grid; gap: var(--ev-space-6); min-width: 0; }
+.ev-calc__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 160px), 1fr)); gap: var(--ev-space-6); }
+.ev-calc__result { display: grid; gap: var(--ev-space-2); }
+.ev-calc__formula { font: 14px/20px var(--font-mono); overflow-wrap: anywhere; }
+
+/* Note ------------------------------------------------------------------- */
+.ev-note { display: grid; gap: var(--ev-space-1); padding-block: var(--ev-space-3); max-width: 68ch; }
+.ev-note__title { display: flex; align-items: center; gap: var(--ev-space-2); font-size: 14px; line-height: 20px; font-weight: var(--ev-weight-medium); }
+.ev-note__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ev-tone); flex: none; }
+.ev-note--info { --ev-tone: var(--ev-color-info); }
+.ev-note--warning { --ev-tone: var(--ev-color-warning); }
+.ev-note--error { --ev-tone: var(--ev-color-error); }
+.ev-note--success { --ev-tone: var(--ev-color-success); }
+
+/* Sources ---------------------------------------------------------------- */
+.ev-sources { display: grid; gap: var(--ev-space-2); margin: 0; padding-left: 20px; font-size: 14px; line-height: 20px; color: var(--ev-ink-muted); }
+.ev-sources a { color: inherit; text-underline-offset: 3px; }
+
+/* Layout breakpoints ----------------------------------------------------- */
+@media (max-width: 800px) {
+  .ev-opening__claim, .ev-opening__proof { grid-column: 1 / -1; }
+  .ev-calc { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Preview helpers (demo pages only) -------------------------------------- */
+.ev-demo { padding: var(--ev-space-6); }
+.ev-demo-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--ev-space-3); }

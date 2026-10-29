@@ -1,0 +1,868 @@
+{
+  "core": {
+    "spacing": {
+      "ev-space-1": {
+        "value": "4px",
+        "type": "spacing",
+        "description": "Hairline gaps inside a control."
+      },
+      "ev-space-2": {
+        "value": "8px",
+        "type": "spacing",
+        "description": "Tight within-group gap: label to value."
+      },
+      "ev-space-3": {
+        "value": "12px",
+        "type": "spacing",
+        "description": "Within-group gap."
+      },
+      "ev-space-4": {
+        "value": "16px",
+        "type": "spacing",
+        "description": "Paragraph to paragraph; copy flow."
+      },
+      "ev-space-5": {
+        "value": "20px",
+        "type": "spacing",
+        "description": "Within-group gap, roomy."
+      },
+      "ev-space-6": {
+        "value": "24px",
+        "type": "spacing",
+        "description": "Between groups (low end); grid column gutter."
+      },
+      "ev-space-8": {
+        "value": "32px",
+        "type": "spacing",
+        "description": "Between groups; peer stat gap."
+      },
+      "ev-space-10": {
+        "value": "40px",
+        "type": "spacing",
+        "description": "Between groups (high end)."
+      },
+      "ev-space-12": {
+        "value": "48px",
+        "type": "spacing",
+        "description": "Major section turn."
+      },
+      "ev-space-16": {
+        "value": "64px",
+        "type": "spacing",
+        "description": "True chapter break only. Never the default page-stack gap."
+      }
+    },
+    "borderRadius": {
+      "ev-radius-small": {
+        "value": "6px",
+        "type": "borderRadius",
+        "description": "Buttons, inputs, small controls."
+      },
+      "ev-radius": {
+        "value": "8px",
+        "type": "borderRadius",
+        "description": "The few surfaces that earn one: a contained calculator, a contrast band."
+      }
+    },
+    "fontFamilies": {
+      "sans": {
+        "value": "Geist",
+        "type": "fontFamilies"
+      },
+      "mono": {
+        "value": "Geist Mono",
+        "type": "fontFamilies"
+      }
+    },
+    "typography": {
+      "ev-t-display": {
+        "type": "typography",
+        "description": "Only the single page-defining statement, when scale is earned. Max 20ch.",
+        "value": {
+          "fontFamily": "{fontFamilies.sans}",
+          "fontWeight": "450",
+          "fontSize": "48px",
+          "lineHeight": "56px",
+          "letterSpacing": "-6%"
+        }
+      },
+      "ev-t-title": {
+        "type": "typography",
+        "description": "The normal page title (h1). Says what happened or what decision is needed. Max 24ch.",
+        "value": {
+          "fontFamily": "{fontFamilies.sans}",
+          "fontWeight": "450",
+          "fontSize": "40px",
+          "lineHeight": "48px",
+          "letterSpacing": "-6%"
+        }
+      },
+      "ev-t-h24": {
+        "type": "typography",
+        "description": "Major section turns (h2). Sentence case, states the claim.",
+        "value": {
+          "fontFamily": "{fontFamilies.sans}",
+          "fontWeight": "450",
+          "fontSize": "24px",
+          "lineHeight": "32px",
+          "letterSpacing": "-4%"
+        }
+      },
+      "ev-t-h20": {
+        "type": "typography",
+        "description": "Nested structure (h3).",
+        "value": {
+          "fontFamily": "{fontFamilies.sans}",
+          "fontWeight": "450",
+          "fontSize": "20px",
+          "lineHeight": "26px",
+          "letterSpacing": "-2%"
+        }
+      },
+      "ev-t-h16": {
+        "type": "typography",
+        "description": "Smallest heading (h4).",
+        "value": {
+          "fontFamily": "{fontFamilies.sans}",
+          "fontWeight": "450",
+          "fontSize": "16px",
+          "lineHeight": "24px",
+          "letterSpacing": "-2%"
+        }
+      },
+      "ev-t-lede": {
+        "type": "typography",
+        "description": "One short orientation passage under the title, in text-secondary. Max 68ch.",
+        "value": {
+          "fontFamily": "{fontFamilies.sans}",
+          "fontWeight": "400",
+          "fontSize": "18px",
+          "lineHeight": "28px",
+          "letterSpacing": "0"
+        }
+      },
+      "ev-t-body": {
+        "type": "typography",
+        "description": "Reading prose, 60 to 68 characters per line.",
+        "value": {
+          "fontFamily": "{fontFamilies.sans}",
+          "fontWeight": "400",
+          "fontSize": "16px",
+          "lineHeight": "24px",
+          "letterSpacing": "0"
+        }
+      },
+      "ev-t-small": {
+        "type": "typography",
+        "description": "Captions, stat labels, button text (at weight 500), tables in compact density.",
+        "value": {
+          "fontFamily": "{fontFamilies.sans}",
+          "fontWeight": "400",
+          "fontSize": "14px",
+          "lineHeight": "20px",
+          "letterSpacing": "0"
+        }
+      },
+      "ev-t-label": {
+        "type": "typography",
+        "description": "Field labels and helper text, in text-secondary.",
+        "value": {
+          "fontFamily": "{fontFamilies.sans}",
+          "fontWeight": "400",
+          "fontSize": "13px",
+          "lineHeight": "123.08%",
+          "letterSpacing": "0"
+        }
+      },
+      "ev-t-meta": {
+        "type": "typography",
+        "description": "Masthead metadata and footer line. Tabular numerals.",
+        "value": {
+          "fontFamily": "{fontFamilies.sans}",
+          "fontWeight": "400",
+          "fontSize": "13px",
+          "lineHeight": "18px",
+          "letterSpacing": "0"
+        }
+      },
+      "ev-value-lead": {
+        "type": "typography",
+        "description": "A decisive stat or calculator result. Tabular numerals. Peers share this exact role.",
+        "value": {
+          "fontFamily": "{fontFamilies.sans}",
+          "fontWeight": "450",
+          "fontSize": "40px",
+          "lineHeight": "115.0%",
+          "letterSpacing": "-4%"
+        }
+      },
+      "ev-t-code": {
+        "type": "typography",
+        "description": "Only code, commands, paths, raw tokens, timestamps and short IDs. Set only the identifier in mono, never the whole sentence or table.",
+        "value": {
+          "fontFamily": "{fontFamilies.mono}",
+          "fontWeight": "400",
+          "fontSize": "14px",
+          "lineHeight": "20px",
+          "letterSpacing": "0"
+        }
+      }
+    }
+  },
+  "light": {
+    "color": {
+      "ev-background-100": {
+        "value": "#ffffff",
+        "type": "color",
+        "description": "Page canvas. The report is normally one continuous canvas on this color."
+      },
+      "ev-background-200": {
+        "value": "#fafafa",
+        "type": "color",
+        "description": "Secondary surface: bar tracks, disabled fields. Never a card fill for ordinary sections."
+      },
+      "ev-gray-100": {
+        "value": "#f2f2f2",
+        "type": "color",
+        "description": "Lowest gray step. Rarely used directly; prefer alpha grays over surfaces."
+      },
+      "ev-gray-200": {
+        "value": "#ebebeb",
+        "type": "color",
+        "description": "Subtle fills."
+      },
+      "ev-gray-300": {
+        "value": "#e6e6e6",
+        "type": "color",
+        "description": "Subtle fills, hover backgrounds."
+      },
+      "ev-gray-400": {
+        "value": "#eaeaea",
+        "type": "color",
+        "description": "Default fills."
+      },
+      "ev-gray-500": {
+        "value": "#c9c9c9",
+        "type": "color",
+        "description": "Decorative rules only; too light for text."
+      },
+      "ev-gray-600": {
+        "value": "#a8a8a8",
+        "type": "color",
+        "description": "Disabled marks; too light for body text."
+      },
+      "ev-gray-700": {
+        "value": "#8f8f8f",
+        "type": "color",
+        "description": "Placeholder-level marks. Below 4.5:1 on canvas, so never body text."
+      },
+      "ev-gray-800": {
+        "value": "#7d7d7d",
+        "type": "color",
+        "description": "Tertiary chart series (chart-3/6). Use only at 18px+ or for marks."
+      },
+      "ev-gray-900": {
+        "value": "#4d4d4d",
+        "type": "color",
+        "description": "Secondary text on background-100 and background-200 (text-secondary). Chart series 2."
+      },
+      "ev-gray-1000": {
+        "value": "#171717",
+        "type": "color",
+        "description": "Primary text, headings, primary button fill, chart series 1."
+      },
+      "ev-gray-alpha-100": {
+        "value": "#0000000d",
+        "type": "color",
+        "description": "Hairline tint."
+      },
+      "ev-gray-alpha-200": {
+        "value": "#00000015",
+        "type": "color",
+        "description": "Button hover fill."
+      },
+      "ev-gray-alpha-300": {
+        "value": "#0000001a",
+        "type": "color",
+        "description": "Subtle borders (border-subtle)."
+      },
+      "ev-gray-alpha-400": {
+        "value": "#00000014",
+        "type": "color",
+        "description": "Default borders for controls and table rules (border-default)."
+      },
+      "ev-gray-alpha-500": {
+        "value": "#00000036",
+        "type": "color",
+        "description": "Stronger tint."
+      },
+      "ev-gray-alpha-600": {
+        "value": "#0000003d",
+        "type": "color",
+        "description": "Stronger tint."
+      },
+      "ev-gray-alpha-700": {
+        "value": "#00000070",
+        "type": "color",
+        "description": "Strong borders, hovered inputs (border-strong)."
+      },
+      "ev-gray-alpha-800": {
+        "value": "#00000082",
+        "type": "color",
+        "description": "Overlay tint."
+      },
+      "ev-gray-alpha-900": {
+        "value": "#000000b2",
+        "type": "color",
+        "description": "Overlay tint."
+      },
+      "ev-gray-alpha-1000": {
+        "value": "#000000e8",
+        "type": "color",
+        "description": "Near-opaque overlay."
+      },
+      "ev-blue-100": {
+        "value": "#f0f7ff",
+        "type": "color",
+        "description": "Blue scale. Tinted background for a state that needs a surface. Color only when it adds meaning to state, action or data, paired with a non-color cue."
+      },
+      "ev-blue-400": {
+        "value": "#cae7ff",
+        "type": "color",
+        "description": "Blue scale. Tinted border or fill for a state. Color only when it adds meaning to state, action or data, paired with a non-color cue."
+      },
+      "ev-blue-700": {
+        "value": "#006bff",
+        "type": "color",
+        "description": "Blue scale. Solid state fill. Color only when it adds meaning to state, action or data, paired with a non-color cue."
+      },
+      "ev-blue-900": {
+        "value": "#005ff2",
+        "type": "color",
+        "description": "Blue scale. State text and marks on canvas. Color only when it adds meaning to state, action or data, paired with a non-color cue."
+      },
+      "ev-blue-1000": {
+        "value": "#002359",
+        "type": "color",
+        "description": "Blue scale. Highest-contrast state text. Color only when it adds meaning to state, action or data, paired with a non-color cue."
+      },
+      "ev-red-100": {
+        "value": "#ffeeef",
+        "type": "color",
+        "description": "Red scale. Tinted background for a state that needs a surface. Color only when it adds meaning to state, action or data, paired with a non-color cue."
+      },
+      "ev-red-400": {
+        "value": "#ffd7d6",
+        "type": "color",
+        "description": "Red scale. Tinted border or fill for a state. Color only when it adds meaning to state, action or data, paired with a non-color cue."
+      },
+      "ev-red-700": {
+        "value": "#fc0035",
+        "type": "color",
+        "description": "Red scale. Solid state fill. Color only when it adds meaning to state, action or data, paired with a non-color cue."
+      },
+      "ev-red-900": {
+        "value": "#d8001b",
+        "type": "color",
+        "description": "Red scale. State text and marks on canvas. Color only when it adds meaning to state, action or data, paired with a non-color cue."
+      },
+      "ev-red-1000": {
+        "value": "#47000c",
+        "type": "color",
+        "description": "Red scale. Highest-contrast state text. Color only when it adds meaning to state, action or data, paired with a non-color cue."
+      },
+      "ev-amber-100": {
+        "value": "#fff6de",
+        "type": "color",
+        "description": "Amber scale. Tinted background for a state that needs a surface. Color only when it adds meaning to state, action or data, paired with a non-color cue."
+      },
+      "ev-amber-400": {
+        "value": "#ffdc73",
+        "type": "color",
+        "description": "Amber scale. Tinted border or fill for a state. Color only when it adds meaning to state, action or data, paired with a non-color cue."
+      },
+      "ev-amber-700": {
+        "value": "#ffae00",
+        "type": "color",
+        "description": "Amber scale. Solid state fill. Color only when it adds meaning to state, action or data, paired with a non-color cue."
+      },
+      "ev-amber-900": {
+        "value": "#aa4d00",
+        "type": "color",
+        "description": "Amber scale. State text and marks on canvas. Color only when it adds meaning to state, action or data, paired with a non-color cue."
+      },
+      "ev-amber-1000": {
+        "value": "#561900",
+        "type": "color",
+        "description": "Amber scale. Highest-contrast state text. Color only when it adds meaning to state, action or data, paired with a non-color cue."
+      },
+      "ev-green-100": {
+        "value": "#ecfdec",
+        "type": "color",
+        "description": "Green scale. Tinted background for a state that needs a surface. Color only when it adds meaning to state, action or data, paired with a non-color cue."
+      },
+      "ev-green-400": {
+        "value": "#b9f5bc",
+        "type": "color",
+        "description": "Green scale. Tinted border or fill for a state. Color only when it adds meaning to state, action or data, paired with a non-color cue."
+      },
+      "ev-green-700": {
+        "value": "#28a948",
+        "type": "color",
+        "description": "Green scale. Solid state fill. Color only when it adds meaning to state, action or data, paired with a non-color cue."
+      },
+      "ev-green-900": {
+        "value": "#107d32",
+        "type": "color",
+        "description": "Green scale. State text and marks on canvas. Color only when it adds meaning to state, action or data, paired with a non-color cue."
+      },
+      "ev-green-1000": {
+        "value": "#003a00",
+        "type": "color",
+        "description": "Green scale. Highest-contrast state text. Color only when it adds meaning to state, action or data, paired with a non-color cue."
+      },
+      "ev-surface-primary": {
+        "value": "{color.ev-background-100}",
+        "type": "color",
+        "description": "Default page surface."
+      },
+      "ev-surface-secondary": {
+        "value": "{color.ev-background-200}",
+        "type": "color",
+        "description": "Secondary surface for bar tracks and disabled states."
+      },
+      "ev-surface-contrast": {
+        "value": "#171717",
+        "type": "color",
+        "description": "The only contrast field: Band with inverse. Same in both themes. Use the Band component instead of painting this surface yourself."
+      },
+      "ev-text-primary": {
+        "value": "{color.ev-gray-1000}",
+        "type": "color",
+        "description": "Body copy, headings, values on surface-primary and surface-secondary."
+      },
+      "ev-text-secondary": {
+        "value": "{color.ev-gray-900}",
+        "type": "color",
+        "description": "Labels, captions, metadata, helper text on surface-primary and surface-secondary. Never tiny gray prose."
+      },
+      "ev-text-on-contrast": {
+        "value": "#ededed",
+        "type": "color",
+        "description": "Text on surface-contrast."
+      },
+      "ev-text-on-contrast-secondary": {
+        "value": "#a4a4a4",
+        "type": "color",
+        "description": "Secondary text on surface-contrast."
+      },
+      "ev-border-subtle": {
+        "value": "{color.ev-gray-alpha-300}",
+        "type": "color",
+        "description": "Table row rules and quiet separators. Prefer spacing first."
+      },
+      "ev-border-default": {
+        "value": "{color.ev-gray-alpha-400}",
+        "type": "color",
+        "description": "Control borders (buttons, inputs)."
+      },
+      "ev-border-strong": {
+        "value": "{color.ev-gray-alpha-700}",
+        "type": "color",
+        "description": "Hovered input border, table header rule."
+      },
+      "ev-border-on-contrast": {
+        "value": "#ffffff3d",
+        "type": "color",
+        "description": "Borders inside a contrast band."
+      },
+      "ev-focus": {
+        "value": "{color.ev-blue-700}",
+        "type": "color",
+        "description": "Focus ring, 2px solid, on every interactive element."
+      },
+      "ev-color-info": {
+        "value": "{color.ev-blue-700}",
+        "type": "color",
+        "description": "Informational state. Pair with a word or icon."
+      },
+      "ev-color-success": {
+        "value": "{color.ev-green-900}",
+        "type": "color",
+        "description": "Success state. Never to make a favorable number green."
+      },
+      "ev-color-warning": {
+        "value": "{color.ev-amber-900}",
+        "type": "color",
+        "description": "Warning state. Pair with a word."
+      },
+      "ev-color-error": {
+        "value": "{color.ev-red-700}",
+        "type": "color",
+        "description": "Error text and invalid field borders."
+      },
+      "ev-chart-1": {
+        "value": "{color.ev-gray-1000}",
+        "type": "color",
+        "description": "Chart series 1: the decisive series."
+      },
+      "ev-chart-2": {
+        "value": "{color.ev-gray-900}",
+        "type": "color",
+        "description": "Chart series 2: supporting or reference series."
+      },
+      "ev-chart-3": {
+        "value": "{color.ev-gray-800}",
+        "type": "color",
+        "description": "Chart series 3."
+      },
+      "ev-chart-4": {
+        "value": "{color.ev-gray-1000}",
+        "type": "color",
+        "description": "Chart series 4 (repeats 1; distinguish with dash or direct label)."
+      },
+      "ev-chart-5": {
+        "value": "{color.ev-gray-900}",
+        "type": "color",
+        "description": "Chart series 5 (repeats 2; distinguish with dash or direct label)."
+      },
+      "ev-chart-6": {
+        "value": "{color.ev-gray-800}",
+        "type": "color",
+        "description": "Chart series 6 (repeats 3; distinguish with dash or direct label)."
+      }
+    }
+  },
+  "dark": {
+    "color": {
+      "ev-background-100": {
+        "value": "#000000",
+        "type": "color",
+        "description": "Page canvas. The report is normally one continuous canvas on this color."
+      },
+      "ev-background-200": {
+        "value": "#000000",
+        "type": "color",
+        "description": "Secondary surface: bar tracks, disabled fields. Never a card fill for ordinary sections."
+      },
+      "ev-gray-100": {
+        "value": "#1a1a1a",
+        "type": "color",
+        "description": "Lowest gray step. Rarely used directly; prefer alpha grays over surfaces."
+      },
+      "ev-gray-200": {
+        "value": "#1f1f1f",
+        "type": "color",
+        "description": "Subtle fills."
+      },
+      "ev-gray-300": {
+        "value": "#292929",
+        "type": "color",
+        "description": "Subtle fills, hover backgrounds."
+      },
+      "ev-gray-400": {
+        "value": "#2e2e2e",
+        "type": "color",
+        "description": "Default fills."
+      },
+      "ev-gray-500": {
+        "value": "#454545",
+        "type": "color",
+        "description": "Decorative rules only; too light for text."
+      },
+      "ev-gray-600": {
+        "value": "#878787",
+        "type": "color",
+        "description": "Disabled marks; too light for body text."
+      },
+      "ev-gray-700": {
+        "value": "#8f8f8f",
+        "type": "color",
+        "description": "Placeholder-level marks. Below 4.5:1 on canvas, so never body text."
+      },
+      "ev-gray-800": {
+        "value": "#7d7d7d",
+        "type": "color",
+        "description": "Tertiary chart series (chart-3/6). Use only at 18px+ or for marks."
+      },
+      "ev-gray-900": {
+        "value": "#a0a0a0",
+        "type": "color",
+        "description": "Secondary text on background-100 and background-200 (text-secondary). Chart series 2."
+      },
+      "ev-gray-1000": {
+        "value": "#ededed",
+        "type": "color",
+        "description": "Primary text, headings, primary button fill, chart series 1."
+      },
+      "ev-gray-alpha-100": {
+        "value": "#ffffff12",
+        "type": "color",
+        "description": "Hairline tint."
+      },
+      "ev-gray-alpha-200": {
+        "value": "#ffffff17",
+        "type": "color",
+        "description": "Button hover fill."
+      },
+      "ev-gray-alpha-300": {
+        "value": "#ffffff21",
+        "type": "color",
+        "description": "Subtle borders (border-subtle)."
+      },
+      "ev-gray-alpha-400": {
+        "value": "#ffffff24",
+        "type": "color",
+        "description": "Default borders for controls and table rules (border-default)."
+      },
+      "ev-gray-alpha-500": {
+        "value": "#ffffff3d",
+        "type": "color",
+        "description": "Stronger tint."
+      },
+      "ev-gray-alpha-600": {
+        "value": "#ffffff82",
+        "type": "color",
+        "description": "Stronger tint."
+      },
+      "ev-gray-alpha-700": {
+        "value": "#ffffff8a",
+        "type": "color",
+        "description": "Strong borders, hovered inputs (border-strong)."
+      },
+      "ev-gray-alpha-800": {
+        "value": "#ffffff78",
+        "type": "color",
+        "description": "Overlay tint."
+      },
+      "ev-gray-alpha-900": {
+        "value": "#ffffff9c",
+        "type": "color",
+        "description": "Overlay tint."
+      },
+      "ev-gray-alpha-1000": {
+        "value": "#ffffffeb",
+        "type": "color",
+        "description": "Near-opaque overlay."
+      },
+      "ev-blue-100": {
+        "value": "#06193a",
+        "type": "color",
+        "description": "Blue scale. Tinted background for a state that needs a surface. Color only when it adds meaning to state, action or data, paired with a non-color cue."
+      },
+      "ev-blue-400": {
+        "value": "#003674",
+        "type": "color",
+        "description": "Blue scale. Tinted border or fill for a state. Color only when it adds meaning to state, action or data, paired with a non-color cue."
+      },
+      "ev-blue-700": {
+        "value": "#006efe",
+        "type": "color",
+        "description": "Blue scale. Solid state fill. Color only when it adds meaning to state, action or data, paired with a non-color cue."
+      },
+      "ev-blue-900": {
+        "value": "#47a8ff",
+        "type": "color",
+        "description": "Blue scale. State text and marks on canvas. Color only when it adds meaning to state, action or data, paired with a non-color cue."
+      },
+      "ev-blue-1000": {
+        "value": "#eaf6ff",
+        "type": "color",
+        "description": "Blue scale. Highest-contrast state text. Color only when it adds meaning to state, action or data, paired with a non-color cue."
+      },
+      "ev-red-100": {
+        "value": "#330a11",
+        "type": "color",
+        "description": "Red scale. Tinted background for a state that needs a surface. Color only when it adds meaning to state, action or data, paired with a non-color cue."
+      },
+      "ev-red-400": {
+        "value": "#6f101b",
+        "type": "color",
+        "description": "Red scale. Tinted border or fill for a state. Color only when it adds meaning to state, action or data, paired with a non-color cue."
+      },
+      "ev-red-700": {
+        "value": "#f13242",
+        "type": "color",
+        "description": "Red scale. Solid state fill. Color only when it adds meaning to state, action or data, paired with a non-color cue."
+      },
+      "ev-red-900": {
+        "value": "#ff565f",
+        "type": "color",
+        "description": "Red scale. State text and marks on canvas. Color only when it adds meaning to state, action or data, paired with a non-color cue."
+      },
+      "ev-red-1000": {
+        "value": "#ffe9ed",
+        "type": "color",
+        "description": "Red scale. Highest-contrast state text. Color only when it adds meaning to state, action or data, paired with a non-color cue."
+      },
+      "ev-amber-100": {
+        "value": "#2a1700",
+        "type": "color",
+        "description": "Amber scale. Tinted background for a state that needs a surface. Color only when it adds meaning to state, action or data, paired with a non-color cue."
+      },
+      "ev-amber-400": {
+        "value": "#5b3000",
+        "type": "color",
+        "description": "Amber scale. Tinted border or fill for a state. Color only when it adds meaning to state, action or data, paired with a non-color cue."
+      },
+      "ev-amber-700": {
+        "value": "#ffae00",
+        "type": "color",
+        "description": "Amber scale. Solid state fill. Color only when it adds meaning to state, action or data, paired with a non-color cue."
+      },
+      "ev-amber-900": {
+        "value": "#ff9300",
+        "type": "color",
+        "description": "Amber scale. State text and marks on canvas. Color only when it adds meaning to state, action or data, paired with a non-color cue."
+      },
+      "ev-amber-1000": {
+        "value": "#fff3d5",
+        "type": "color",
+        "description": "Amber scale. Highest-contrast state text. Color only when it adds meaning to state, action or data, paired with a non-color cue."
+      },
+      "ev-green-100": {
+        "value": "#002608",
+        "type": "color",
+        "description": "Green scale. Tinted background for a state that needs a surface. Color only when it adds meaning to state, action or data, paired with a non-color cue."
+      },
+      "ev-green-400": {
+        "value": "#004615",
+        "type": "color",
+        "description": "Green scale. Tinted border or fill for a state. Color only when it adds meaning to state, action or data, paired with a non-color cue."
+      },
+      "ev-green-700": {
+        "value": "#00ac3a",
+        "type": "color",
+        "description": "Green scale. Solid state fill. Color only when it adds meaning to state, action or data, paired with a non-color cue."
+      },
+      "ev-green-900": {
+        "value": "#00ca50",
+        "type": "color",
+        "description": "Green scale. State text and marks on canvas. Color only when it adds meaning to state, action or data, paired with a non-color cue."
+      },
+      "ev-green-1000": {
+        "value": "#d8ffe4",
+        "type": "color",
+        "description": "Green scale. Highest-contrast state text. Color only when it adds meaning to state, action or data, paired with a non-color cue."
+      },
+      "ev-surface-primary": {
+        "value": "{color.ev-background-100}",
+        "type": "color",
+        "description": "Default page surface."
+      },
+      "ev-surface-secondary": {
+        "value": "{color.ev-background-200}",
+        "type": "color",
+        "description": "Secondary surface for bar tracks and disabled states."
+      },
+      "ev-surface-contrast": {
+        "value": "#171717",
+        "type": "color",
+        "description": "The only contrast field: Band with inverse. Same in both themes. Use the Band component instead of painting this surface yourself."
+      },
+      "ev-text-primary": {
+        "value": "{color.ev-gray-1000}",
+        "type": "color",
+        "description": "Body copy, headings, values on surface-primary and surface-secondary."
+      },
+      "ev-text-secondary": {
+        "value": "{color.ev-gray-900}",
+        "type": "color",
+        "description": "Labels, captions, metadata, helper text on surface-primary and surface-secondary. Never tiny gray prose."
+      },
+      "ev-text-on-contrast": {
+        "value": "#ededed",
+        "type": "color",
+        "description": "Text on surface-contrast."
+      },
+      "ev-text-on-contrast-secondary": {
+        "value": "#a4a4a4",
+        "type": "color",
+        "description": "Secondary text on surface-contrast."
+      },
+      "ev-border-subtle": {
+        "value": "{color.ev-gray-alpha-300}",
+        "type": "color",
+        "description": "Table row rules and quiet separators. Prefer spacing first."
+      },
+      "ev-border-default": {
+        "value": "{color.ev-gray-alpha-400}",
+        "type": "color",
+        "description": "Control borders (buttons, inputs)."
+      },
+      "ev-border-strong": {
+        "value": "{color.ev-gray-alpha-700}",
+        "type": "color",
+        "description": "Hovered input border, table header rule."
+      },
+      "ev-border-on-contrast": {
+        "value": "#ffffff3d",
+        "type": "color",
+        "description": "Borders inside a contrast band."
+      },
+      "ev-focus": {
+        "value": "{color.ev-blue-900}",
+        "type": "color",
+        "description": "Focus ring, 2px solid, on every interactive element."
+      },
+      "ev-color-info": {
+        "value": "{color.ev-blue-700}",
+        "type": "color",
+        "description": "Informational state. Pair with a word or icon."
+      },
+      "ev-color-success": {
+        "value": "{color.ev-green-900}",
+        "type": "color",
+        "description": "Success state. Never to make a favorable number green."
+      },
+      "ev-color-warning": {
+        "value": "{color.ev-amber-900}",
+        "type": "color",
+        "description": "Warning state. Pair with a word."
+      },
+      "ev-color-error": {
+        "value": "{color.ev-red-700}",
+        "type": "color",
+        "description": "Error text and invalid field borders."
+      },
+      "ev-chart-1": {
+        "value": "{color.ev-gray-1000}",
+        "type": "color",
+        "description": "Chart series 1: the decisive series."
+      },
+      "ev-chart-2": {
+        "value": "{color.ev-gray-900}",
+        "type": "color",
+        "description": "Chart series 2: supporting or reference series."
+      },
+      "ev-chart-3": {
+        "value": "{color.ev-gray-800}",
+        "type": "color",
+        "description": "Chart series 3."
+      },
+      "ev-chart-4": {
+        "value": "{color.ev-gray-1000}",
+        "type": "color",
+        "description": "Chart series 4 (repeats 1; distinguish with dash or direct label)."
+      },
+      "ev-chart-5": {
+        "value": "{color.ev-gray-900}",
+        "type": "color",
+        "description": "Chart series 5 (repeats 2; distinguish with dash or direct label)."
+      },
+      "ev-chart-6": {
+        "value": "{color.ev-gray-800}",
+        "type": "color",
+        "description": "Chart series 6 (repeats 3; distinguish with dash or direct label)."
+      }
+    }
+  },
+  "$themes": [],
+  "$metadata": {
+    "tokenSetOrder": [
+      "core",
+      "light",
+      "dark"
+    ]
+  }
+}

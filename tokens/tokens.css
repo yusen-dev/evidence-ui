@@ -1,0 +1,186 @@
+/* Evidence UI tokens. Generated from tokens.json. */
+@font-face { font-family: "Geist"; src: url("../fonts/Geist-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Geist Mono"; src: url("../fonts/GeistMono-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+
+:root, [data-theme="light"] {
+  color-scheme: light;
+  --ev-background-100: oklch(1 0 0);
+  --ev-background-200: oklch(0.984 0 0);
+  --ev-gray-100: oklch(0.961 0 0);
+  --ev-gray-200: oklch(0.94 0 0);
+  --ev-gray-300: oklch(0.925 0 0);
+  --ev-gray-400: oklch(0.937 0 0);
+  --ev-gray-500: oklch(0.836 0 0);
+  --ev-gray-600: oklch(0.732 0 0);
+  --ev-gray-700: oklch(0.65 0 0);
+  --ev-gray-800: oklch(0.59 0 0);
+  --ev-gray-900: oklch(0.42 0 0);
+  --ev-gray-1000: oklch(0.205 0 0);
+  --ev-gray-alpha-100: oklch(0 0 0 / 0.05);
+  --ev-gray-alpha-200: oklch(0 0 0 / 0.081);
+  --ev-gray-alpha-300: oklch(0 0 0 / 0.1);
+  --ev-gray-alpha-400: oklch(0 0 0 / 0.08);
+  --ev-gray-alpha-500: oklch(0 0 0 / 0.21);
+  --ev-gray-alpha-600: oklch(0 0 0 / 0.24);
+  --ev-gray-alpha-700: oklch(0 0 0 / 0.44);
+  --ev-gray-alpha-800: oklch(0 0 0 / 0.51);
+  --ev-gray-alpha-900: oklch(0 0 0 / 0.7);
+  --ev-gray-alpha-1000: oklch(0 0 0 / 0.91);
+  --ev-blue-100: oklch(97.32% 0.0141 251.56);
+  --ev-blue-400: oklch(91.58% 0.0473 245.116);
+  --ev-blue-700: oklch(57.61% 0.2508 258.23);
+  --ev-blue-900: oklch(53.18% 0.2399 256.99);
+  --ev-blue-1000: oklch(26.67% 0.1099 254.34);
+  --ev-red-100: oklch(96.5% 0.0223 13.09);
+  --ev-red-400: oklch(91.51% 0.0471 19.8);
+  --ev-red-700: oklch(62.56% 0.2524 23.03);
+  --ev-red-900: oklch(54.99% 0.232 25.29);
+  --ev-red-1000: oklch(24.8% 0.1041 18.86);
+  --ev-amber-100: oklch(97.48% 0.0331 85.79);
+  --ev-amber-400: oklch(91.02% 0.1322 88.25);
+  --ev-amber-700: oklch(81.87% 0.1969 76.46);
+  --ev-amber-900: oklch(52.79% 0.1496 54.65);
+  --ev-amber-1000: oklch(30.83% 0.099 45.48);
+  --ev-green-100: oklch(97.59% 0.0289 145.42);
+  --ev-green-400: oklch(91.49% 0.0976 146.24);
+  --ev-green-700: oklch(64.58% 0.1746 147.27);
+  --ev-green-900: oklch(51.75% 0.1453 147.65);
+  --ev-green-1000: oklch(29.15% 0.1197 147.38);
+  --ev-surface-primary: var(--ev-background-100);
+  --ev-surface-secondary: var(--ev-background-200);
+  --ev-surface-contrast: oklch(0.205 0 0);
+  --ev-text-primary: var(--ev-gray-1000);
+  --ev-text-secondary: var(--ev-gray-900);
+  --ev-text-on-contrast: oklch(0.946 0 0);
+  --ev-text-on-contrast-secondary: oklch(0.72 0 0);
+  --ev-border-subtle: var(--ev-gray-alpha-300);
+  --ev-border-default: var(--ev-gray-alpha-400);
+  --ev-border-strong: var(--ev-gray-alpha-700);
+  --ev-border-on-contrast: oklch(1 0 0 / 0.24);
+  --ev-focus: var(--ev-blue-700);
+  --ev-color-info: var(--ev-blue-700);
+  --ev-color-success: var(--ev-green-900);
+  --ev-color-warning: var(--ev-amber-900);
+  --ev-color-error: var(--ev-red-700);
+  --ev-chart-1: var(--ev-gray-1000);
+  --ev-chart-2: var(--ev-gray-900);
+  --ev-chart-3: var(--ev-gray-800);
+  --ev-chart-4: var(--ev-gray-1000);
+  --ev-chart-5: var(--ev-gray-900);
+  --ev-chart-6: var(--ev-gray-800);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --ev-background-100: oklch(0 0 0);
+    --ev-background-200: oklch(0.027 0 0);
+    --ev-gray-100: oklch(0.218 0 0);
+    --ev-gray-200: oklch(0.239 0 0);
+    --ev-gray-300: oklch(0.281 0 0);
+    --ev-gray-400: oklch(0.301 0 0);
+    --ev-gray-500: oklch(0.39 0 0);
+    --ev-gray-600: oklch(0.623 0 0);
+    --ev-gray-900: oklch(0.706 0 0);
+    --ev-gray-1000: oklch(0.946 0 0);
+    --ev-gray-alpha-100: oklch(1 0 0 / 0.07);
+    --ev-gray-alpha-200: oklch(1 0 0 / 0.09);
+    --ev-gray-alpha-300: oklch(1 0 0 / 0.13);
+    --ev-gray-alpha-400: oklch(1 0 0 / 0.14);
+    --ev-gray-alpha-500: oklch(1 0 0 / 0.24);
+    --ev-gray-alpha-600: oklch(1 0 0 / 0.51);
+    --ev-gray-alpha-700: oklch(1 0 0 / 0.54);
+    --ev-gray-alpha-800: oklch(1 0 0 / 0.47);
+    --ev-gray-alpha-900: oklch(1 0 0 / 0.61);
+    --ev-gray-alpha-1000: oklch(1 0 0 / 0.92);
+    --ev-blue-100: oklch(22.17% 0.069 259.89);
+    --ev-blue-400: oklch(34.1% 0.121 254.74);
+    --ev-blue-700: oklch(57.61% 0.2321 258.23);
+    --ev-blue-900: oklch(71.7% 0.1648 250.794);
+    --ev-blue-1000: oklch(96.75% 0.0179 242.423);
+    --ev-red-100: oklch(22.1% 0.0657 15.11);
+    --ev-red-400: oklch(35.27% 0.1273 21.23);
+    --ev-red-700: oklch(62.56% 0.2234 23.03);
+    --ev-red-900: oklch(69.96% 0.2136 22.03);
+    --ev-red-1000: oklch(95.6% 0.0293 6.61);
+    --ev-amber-100: oklch(22.46% 0.0538 76.04);
+    --ev-amber-400: oklch(35.53% 0.0903 66.297);
+    --ev-amber-900: oklch(77.21% 0.1991 64.28);
+    --ev-amber-1000: oklch(96.7% 0.0418 84.59);
+    --ev-green-100: oklch(23.09% 0.0716 149.68);
+    --ev-green-400: oklch(34.39% 0.1039 147.78);
+    --ev-green-700: oklch(64.58% 0.199 147.27);
+    --ev-green-900: oklch(73.1% 0.2158 148.29);
+    --ev-green-1000: oklch(96.76% 0.056 154.18);
+    --ev-focus: var(--ev-blue-900);
+  }
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --ev-background-100: oklch(0 0 0);
+  --ev-background-200: oklch(0.027 0 0);
+  --ev-gray-100: oklch(0.218 0 0);
+  --ev-gray-200: oklch(0.239 0 0);
+  --ev-gray-300: oklch(0.281 0 0);
+  --ev-gray-400: oklch(0.301 0 0);
+  --ev-gray-500: oklch(0.39 0 0);
+  --ev-gray-600: oklch(0.623 0 0);
+  --ev-gray-900: oklch(0.706 0 0);
+  --ev-gray-1000: oklch(0.946 0 0);
+  --ev-gray-alpha-100: oklch(1 0 0 / 0.07);
+  --ev-gray-alpha-200: oklch(1 0 0 / 0.09);
+  --ev-gray-alpha-300: oklch(1 0 0 / 0.13);
+  --ev-gray-alpha-400: oklch(1 0 0 / 0.14);
+  --ev-gray-alpha-500: oklch(1 0 0 / 0.24);
+  --ev-gray-alpha-600: oklch(1 0 0 / 0.51);
+  --ev-gray-alpha-700: oklch(1 0 0 / 0.54);
+  --ev-gray-alpha-800: oklch(1 0 0 / 0.47);
+  --ev-gray-alpha-900: oklch(1 0 0 / 0.61);
+  --ev-gray-alpha-1000: oklch(1 0 0 / 0.92);
+  --ev-blue-100: oklch(22.17% 0.069 259.89);
+  --ev-blue-400: oklch(34.1% 0.121 254.74);
+  --ev-blue-700: oklch(57.61% 0.2321 258.23);
+  --ev-blue-900: oklch(71.7% 0.1648 250.794);
+  --ev-blue-1000: oklch(96.75% 0.0179 242.423);
+  --ev-red-100: oklch(22.1% 0.0657 15.11);
+  --ev-red-400: oklch(35.27% 0.1273 21.23);
+  --ev-red-700: oklch(62.56% 0.2234 23.03);
+  --ev-red-900: oklch(69.96% 0.2136 22.03);
+  --ev-red-1000: oklch(95.6% 0.0293 6.61);
+  --ev-amber-100: oklch(22.46% 0.0538 76.04);
+  --ev-amber-400: oklch(35.53% 0.0903 66.297);
+  --ev-amber-900: oklch(77.21% 0.1991 64.28);
+  --ev-amber-1000: oklch(96.7% 0.0418 84.59);
+  --ev-green-100: oklch(23.09% 0.0716 149.68);
+  --ev-green-400: oklch(34.39% 0.1039 147.78);
+  --ev-green-700: oklch(64.58% 0.199 147.27);
+  --ev-green-900: oklch(73.1% 0.2158 148.29);
+  --ev-green-1000: oklch(96.76% 0.056 154.18);
+  --ev-focus: var(--ev-blue-900);
+}
+
+:root {
+  --ev-space-1: 4px;
+  --ev-space-2: 8px;
+  --ev-space-3: 12px;
+  --ev-space-4: 16px;
+  --ev-space-5: 20px;
+  --ev-space-6: 24px;
+  --ev-space-8: 32px;
+  --ev-space-10: 40px;
+  --ev-space-12: 48px;
+  --ev-space-16: 64px;
+  --ev-radius-small: 6px;
+  --ev-radius: 8px;
+  --ev-control-height: 36px;
+  --ev-control-height-touch: 44px;
+  --ev-content-width: 1200px;
+  --ev-chart-min-width: 640px;
+  --ev-weight-regular: 400;
+  --ev-weight-heading: 450;
+  --ev-weight-medium: 500;
+  --ev-weight-semibold: 600;
+  --font-sans: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "Geist Mono", "SFMono-Regular", Consolas, monospace;
+}
