@@ -7,7 +7,7 @@ A small, monochrome component kit for pages that make a case with numbers: custo
 - **Guidelines** written for designers and for AI coding assistants.
 - **Geist and Geist Mono** fonts bundled under the SIL Open Font License.
 
-Open [`examples/index.html`](examples/index.html) to see a complete sample report built from every component.
+**Live example:** https://yusen-dev.github.io/evidence-ui/examples/ is a complete sample report built from every component. Source: [`examples/index.html`](examples/index.html).
 
 > Evidence UI is an independent project and is not affiliated with Vercel. See [NOTICE.md](NOTICE.md).
 
@@ -69,6 +69,7 @@ Give your assistant `docs/guidelines.md`, `docs/components.md` and `dist/index.d
 
 Evidence UI 是一套黑白灰风格的组件库，专门用来做“用数据讲道理”的页面，比如客户报告、方案、基准测试和价格计算器。设计目标是让读者第一眼看到结论，再往下能逐项核对证据。
 
+- **在线示例：** https://yusen-dev.github.io/evidence-ui/examples/
 - **网页里用：** 按上面 “Use in a web page” 的方式引入 CSS 和 JS 就行，组件挂在 `window.EvidenceUI` 上。
 - **Figma 里用：** 装 Tokens Studio 插件，导入 `tokens/figma-tokens-studio.json`，再把 `fonts/` 里的字体装到电脑上。
 - **给 AI 用：** 把 `docs/guidelines.md`、`docs/components.md` 和 `dist/index.d.ts` 发给 AI，或者直接给它这个仓库的链接。
